@@ -1,0 +1,15 @@
+[build]
+  command = "npm run build"
+  functions = "functions-build"
+  publish = "public"
+
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/server"
+  status = 200
+
+[functions]
+  directory = "functions-build"
+
+[build.environment]
+  AWS_LAMBDA_JS_RUNTIME = "nodejs16.x"
