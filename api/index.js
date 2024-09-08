@@ -12,7 +12,7 @@ app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 
 // POST route to upload and process the image
-app.post('/remove-bg', async (req, res) => {
+app.post('/', async (req, res) => {
   try {
     if (!req.body.image) {
       return res.status(400).send('No image data provided');
